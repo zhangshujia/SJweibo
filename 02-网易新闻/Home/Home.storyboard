@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pvO-9p-jKw">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--网易新闻-->
+        <scene sceneID="yvq-On-Nle">
+            <objects>
+                <viewController id="m4j-9q-pMI" customClass="HomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vzi-oe-ZZS"/>
+                        <viewControllerLayoutGuide type="bottom" id="jh6-eg-c6F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9dw-Nc-zwC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgg-fi-sA7" userLabel="频道视图">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="y26-rX-G0e"/>
+                                </constraints>
+                            </scrollView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Pf-zT-eq3" userLabel="内容视图">
+                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Wcf-IX-L0y">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3j8-C4-Y7K">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xgg-fi-sA7" firstAttribute="top" secondItem="Vzi-oe-ZZS" secondAttribute="bottom" id="AST-0l-hg0"/>
+                            <constraint firstItem="3Pf-zT-eq3" firstAttribute="leading" secondItem="9dw-Nc-zwC" secondAttribute="leadingMargin" constant="-16" id="Jc4-W6-9V7"/>
+                            <constraint firstItem="3Pf-zT-eq3" firstAttribute="top" secondItem="xgg-fi-sA7" secondAttribute="bottom" id="MXf-Zf-kIm"/>
+                            <constraint firstItem="jh6-eg-c6F" firstAttribute="top" secondItem="3Pf-zT-eq3" secondAttribute="bottom" id="Mn8-rB-tap"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xgg-fi-sA7" secondAttribute="trailing" constant="-16" id="UdX-93-gOV"/>
+                            <constraint firstItem="xgg-fi-sA7" firstAttribute="leading" secondItem="9dw-Nc-zwC" secondAttribute="leadingMargin" constant="-16" id="ggc-7j-QMb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3Pf-zT-eq3" secondAttribute="trailing" constant="-16" id="tzF-Th-803"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="网易新闻" id="yZP-sR-KsP"/>
+                    <connections>
+                        <outlet property="channelView" destination="xgg-fi-sA7" id="e1I-WP-WfT"/>
+                        <outlet property="contentView" destination="3Pf-zT-eq3" id="td0-GG-xVJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kSH-vL-Gtp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1344" y="293"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="n9v-yw-9BH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pvO-9p-jKw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sjT-2K-nfl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="m4j-9q-pMI" kind="relationship" relationship="rootViewController" id="cFS-fy-auy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HCQ-HA-DpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="532" y="293"/>
+        </scene>
+    </scenes>
+</document>
